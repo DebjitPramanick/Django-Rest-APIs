@@ -36,3 +36,34 @@ def batchAPI(request, id=0):
         batch = Batch.objects.get(BatchId=id)
         batch.delete()
         return JsonResponse("Deleted successfully", safe=False)
+
+
+
+@csrf_exempt
+def studentAPI(request, id=0):
+    if request.method == 'GET':
+        student = Student.objects.all()
+        student_sl = StudentSerializer(student, many=True)
+        return JsonResponse(student_sl.data, safe=False)
+
+    elif request.method == 'POST':
+        student_data = JSONParser().parse(request)
+        student_sl = StudentSerializer(data=student_data)
+        if student_sl.is_valid():
+            student_sl.save()
+            return JsonResponse("Added Successfully", safe=False)
+        return JsonResponse("Failed to add", safe=False)
+
+    elif request.method == 'PUT':
+        student_data = JSONParser().parse(request)
+        student = Student.objects.get(StudentId=student_data['StudentId'])
+        student_sl = StudentSerializer(student, data=student_data)
+        if student_sl.is_valid():
+            student_sl.save()
+            return JsonResponse("Updated Successfully", safe=False)
+        return JsonResponse("Failed to update", safe=False)
+
+    elif request.method == 'DELETE':
+        student = Student.objects.get(StudentId=id)
+        student.delete()
+        return JsonResponse("Deleted successfully", safe=False)

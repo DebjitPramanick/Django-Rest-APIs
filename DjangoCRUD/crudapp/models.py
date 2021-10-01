@@ -5,6 +5,7 @@ from django.db import models
 
 class Student(models.Model):
     StudentId = models.AutoField(primary_key=True)
+    BatchName = models.CharField(max_length=500, default="Math")
     StudentName = models.CharField(max_length=500)
     Age = models.IntegerField()
     JoiningDate = models.DateField()

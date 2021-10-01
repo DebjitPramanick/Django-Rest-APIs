@@ -10,4 +10,4 @@ class BatchSerializer(serializers.ModelSerializer):
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('StudentId', 'StudentName', 'Age', 'JoiningDate')
+        fields = ('StudentId', 'StudentName', 'Age', 'JoiningDate', 'BatchName')
