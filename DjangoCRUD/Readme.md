@@ -7,4 +7,5 @@
 5. Install dnspython [Cloud Module], djongo to connect MongoDB
 6. Migrate changes
 7. Create serializer to serialize response in json object
-8. 
+8. Create APIs
+9. Create routes and add to urls file both in app and project
