@@ -10,3 +10,6 @@ sudo -u postgres psql
 6. Create database on pgadmin
 7. Add database details to django app
 8. Make migrations
+9. Add some data to tables using sql
+10. Make serializers
+11. Create APIs
