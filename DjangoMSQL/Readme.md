@@ -1,0 +1,1 @@
+1. To connect MySQL install database connector (pymysql)
