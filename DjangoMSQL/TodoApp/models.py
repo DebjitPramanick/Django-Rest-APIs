@@ -8,6 +8,6 @@ class Task(models.Model):
     taskStatus = models.BooleanField(default=False)
     listId = models.IntegerField()
 
-class List(models.Model):
+class TaskList(models.Model):
     listID = models.AutoField(primary_key=True)
     listName = models.CharField(max_length=50)
